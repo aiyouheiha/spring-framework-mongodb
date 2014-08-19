@@ -7,16 +7,10 @@
  * with the terms and conditions stipulated in the agreement/contract 
  * under which the software has been supplied. 
  */
-package com.lemon.spring.service;
+package com.lemon.spring.repository;
 
 import com.lemon.spring.domain.User;
 
-import java.util.List;
-
-public interface IUserService {
-    User initUser();
-    boolean saveUser(User user);
-    List<User> getUserList();
-    User getUserByFirstName(String firstName);
-    void insertUser(User user);
+public interface IPersonRepository {
+    void insert(User user);
 }

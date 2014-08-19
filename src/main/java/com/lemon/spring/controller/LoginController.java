@@ -14,7 +14,6 @@ import com.lemon.spring.service.IUserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -35,9 +34,10 @@ public class LoginController {
     @RequestMapping("/signin")
     public String signin(User user,
                          Model model) {
-        userService.saveUser(user);
-        User savedUser = userService.getUserByFirstName(user.getFirstName());
-        model.addAttribute("firstName", savedUser.getFirstName());
+//        userService.saveUser(user);
+        userService.insertUser(user);
+//        User savedUser = userService.getUserByFirstName(user.getFirstName());
+        model.addAttribute("firstName", user.getFirstName());
         return "greeting";
     }
 

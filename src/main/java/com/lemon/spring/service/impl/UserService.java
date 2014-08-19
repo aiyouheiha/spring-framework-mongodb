@@ -10,6 +10,7 @@
 package com.lemon.spring.service.impl;
 
 import com.lemon.spring.domain.User;
+import com.lemon.spring.repository.IPersonRepository;
 import com.lemon.spring.repository.UserRepository;
 import com.lemon.spring.service.IUserService;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,9 @@ public class UserService implements IUserService {
 
     @Resource
     private UserRepository userRepository;
+
+    @Resource
+    private IPersonRepository personRepository;
 
     @Override
     public User initUser() {
@@ -48,6 +52,11 @@ public class UserService implements IUserService {
     @Override
     public User getUserByFirstName(String firstName) {
         return userRepository.findByFirstName(firstName).get(0);
+    }
+
+    @Override
+    public void insertUser(User user) {
+        personRepository.insert(user);
     }
 
 
