@@ -10,10 +10,11 @@
 package com.lemon.spring.domain;
 
 import lombok.Data;
-import org.springframework.data.mongodb.core.mapping.Document;
+
+import javax.persistence.Entity;
 
 @Data
-@Document
+@Entity
 public class User {
 //    @Id
 //    private String id;

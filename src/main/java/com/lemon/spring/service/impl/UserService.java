@@ -9,6 +9,7 @@
  */
 package com.lemon.spring.service.impl;
 
+import com.lemon.spring.domain.QUser;
 import com.lemon.spring.domain.User;
 import com.lemon.spring.repository.IPersonRepository;
 import com.lemon.spring.repository.UserRepository;
@@ -46,7 +47,9 @@ public class UserService implements IUserService {
 
     @Override
     public List<User> getUserList() {
-        return userRepository.findAll();
+        QUser user = QUser.user;
+        return (List<User>)userRepository.findAll(user.firstName.contains("lemon"));
+//        return userRepository.findAll();
     }
 
     @Override
