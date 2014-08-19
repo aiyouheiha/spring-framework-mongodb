@@ -45,5 +45,10 @@ public class UserService implements IUserService {
         return userRepository.findAll();
     }
 
+    @Override
+    public User getUserByFirstName(String firstName) {
+        return userRepository.findByFirstName(firstName).get(0);
+    }
+
 
 }

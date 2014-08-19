@@ -12,6 +12,8 @@ package com.lemon.spring.repository;
 import com.lemon.spring.domain.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface UserRepository extends MongoRepository<User,String>{
-    
+import java.util.List;
+
+public interface UserRepository extends MongoRepository<User, String> {
+    List<User> findByFirstName(String firstName);
 }

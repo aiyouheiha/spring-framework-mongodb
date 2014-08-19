@@ -17,4 +17,5 @@ public interface IUserService {
     User initUser();
     boolean saveUser(User user);
     List<User> getUserList();
+    User getUserByFirstName(String firstName);
 }

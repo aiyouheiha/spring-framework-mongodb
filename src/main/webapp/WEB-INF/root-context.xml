@@ -27,14 +27,15 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <mongo:mongo id="mongo" host="localhost" port="27017"/>
-    <!--<mongo:db-factory dbname="springtest"/>-->
+    <mongo:mongo host="localhost" port="27017">
+        <mongo:options/>
+    </mongo:mongo>
+    <mongo:db-factory dbname="springdb" mongo-ref="mongo"/>
 
     <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
-        <constructor-arg ref="mongo" />
-        <constructor-arg value="springdb" />
+        <constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>
     </bean>
 
-    <mongo:repositories base-package="com.lemon.spring.repository" />
+    <mongo:repositories base-package="com.lemon.spring.repository"/>
 
 </beans>
