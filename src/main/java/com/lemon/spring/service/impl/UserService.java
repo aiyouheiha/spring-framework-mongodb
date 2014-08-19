@@ -15,6 +15,7 @@ import com.lemon.spring.service.IUserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class UserService implements IUserService {
@@ -38,4 +39,11 @@ public class UserService implements IUserService {
         }
         return false;
     }
+
+    @Override
+    public List<User> getUserList() {
+        return userRepository.findAll();
+    }
+
+
 }

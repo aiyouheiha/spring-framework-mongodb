@@ -1,20 +1,20 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 
 <html>
 <head>
     <title></title>
 </head>
 <body>
-<form:form action="login">
-    <table>
+Test!
+<table>
+    <c:forEach var="u" items="${userList}">
         <tr>
-            Hello ${firstName}!
+            <td>${u.firstName}</td>
+            <td>${u.lastName}</td>
         </tr>
-        <tr>
-            <input type="submit" value="signout"/>
-        </tr>
-    </table>
-</form:form>
+    </c:forEach>
+</table>
 </body>
 </html>

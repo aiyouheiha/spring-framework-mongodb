@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Controller
 public class LoginController {
@@ -37,5 +38,12 @@ public class LoginController {
         userService.saveUser(user);
         model.addAttribute("firstName", user.getFirstName());
         return "greeting";
+    }
+
+    @RequestMapping("/user_list")
+    public String userList(Model model) {
+        List<User> userList = userService.getUserList();
+        model.addAttribute("userList", userList);
+        return "user_list";
     }
 }

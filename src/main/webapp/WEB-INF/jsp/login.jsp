@@ -23,5 +23,6 @@
         </tr>
     </table>
 </form:form>
+<input type="button" value="用户列表" onclick="javascript:location.href='user_list'">
 </body>
 </html>
