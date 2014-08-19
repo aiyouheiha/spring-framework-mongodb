@@ -6,7 +6,7 @@
     <title></title>
 </head>
 <body>
-<form:form commandName="user" action="login">
+<form:form commandName="user" action="signin">
     <table>
         <tr>
             <td>First Name:</td>
@@ -18,7 +18,7 @@
         </tr>
         <tr>
             <td colspan="2">
-                <input type="submit" value="login"/>
+                <input type="submit" value="注册"/>
             </td>
         </tr>
     </table>

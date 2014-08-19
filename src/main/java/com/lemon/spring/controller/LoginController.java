@@ -14,6 +14,7 @@ import com.lemon.spring.service.IUserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 
@@ -28,5 +29,13 @@ public class LoginController {
         User user = userService.initUser();
         model.addAttribute(user);
         return "login";
+    }
+
+    @RequestMapping("/signin")
+    public String signin(User user,
+                         Model model) {
+        userService.saveUser(user);
+        model.addAttribute("firstName", user.getFirstName());
+        return "greeting";
     }
 }

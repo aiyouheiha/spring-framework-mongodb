@@ -7,11 +7,11 @@
  * with the terms and conditions stipulated in the agreement/contract 
  * under which the software has been supplied. 
  */
-package com.lemon.spring.service;
+package com.lemon.spring.repository;
 
 import com.lemon.spring.domain.User;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface IUserService {
-    User initUser();
-    boolean saveUser(User user);
+public interface UserRepository extends MongoRepository<User,String>{
+    
 }

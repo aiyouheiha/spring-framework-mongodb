@@ -10,11 +10,17 @@
 package com.lemon.spring.service.impl;
 
 import com.lemon.spring.domain.User;
+import com.lemon.spring.repository.UserRepository;
 import com.lemon.spring.service.IUserService;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+
 @Service
-public class UserService implements IUserService{
+public class UserService implements IUserService {
+
+    @Resource
+    private UserRepository userRepository;
 
     @Override
     public User initUser() {
@@ -22,5 +28,14 @@ public class UserService implements IUserService{
         user.setFirstName("service firstname");
         user.setLastName("service lastname");
         return user;
+    }
+
+    @Override
+    public boolean saveUser(User user) {
+        User u = userRepository.save(user);
+        if (u != null) {
+            return true;
+        }
+        return false;
     }
 }
