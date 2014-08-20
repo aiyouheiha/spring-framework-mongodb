@@ -3,6 +3,7 @@
 
 <html>
 <head>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
     <title></title>
 </head>
 <body>
@@ -21,7 +22,7 @@
                 <input type="submit" value="注册"/>
             </td>
             <td>
-                <input type="button" value="用户列表" onclick="javascript:location.href='user_list'">
+                <input type="button" value="用户列表" onclick="javascript:location.href='user_list?q=礼'">
             </td>
         </tr>
     </table>

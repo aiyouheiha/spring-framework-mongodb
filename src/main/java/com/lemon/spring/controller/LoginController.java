@@ -36,7 +36,8 @@ public class LoginController {
     public String signin(User user,
                          Model model) {
 //        userService.saveUser(user);
-        userService.insertUser(user);
+        String text = user.getFirstName();
+//        userService.insertUser(user);
 //        User savedUser = userService.getUserByFirstName(user.getFirstName());
         model.addAttribute("firstName", user.getFirstName());
         return "greeting";
