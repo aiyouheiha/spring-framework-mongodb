@@ -17,12 +17,14 @@
             <td><form:input path="lastName"/></td>
         </tr>
         <tr>
-            <td colspan="2">
+            <td>
                 <input type="submit" value="注册"/>
+            </td>
+            <td>
+                <input type="button" value="用户列表" onclick="javascript:location.href='user_list'">
             </td>
         </tr>
     </table>
 </form:form>
-<input type="button" value="用户列表" onclick="javascript:location.href='user_list'">
 </body>
 </html>

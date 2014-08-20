@@ -4,16 +4,23 @@
 
 <html>
 <head>
-    <title></title>
+    <title>User List</title>
 </head>
 <body>
-Test!
-<table>
+<table border="1">
+    <tr>
+        <td>index</td>
+        <td><font>firstName</font></td>
+        <td><font>lastName</font></td>
+    </tr>
+    <c:set var="index" value="1"/>
     <c:forEach var="u" items="${userList}">
         <tr>
+            <td>${index}</td>
             <td>${u.firstName}</td>
             <td>${u.lastName}</td>
         </tr>
+        <c:set var="index" value="${index+1}"/>
     </c:forEach>
 </table>
 </body>

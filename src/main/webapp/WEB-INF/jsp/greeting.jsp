@@ -7,14 +7,8 @@
 </head>
 <body>
 <form:form action="login">
-    <table>
-        <tr>
-            Hello ${firstName}!
-        </tr>
-        <tr>
-            <input type="submit" value="signout"/>
-        </tr>
-    </table>
+    Hello ${firstName}!<br>
+    <input type="submit" value="signout"/>
 </form:form>
 </body>
 </html>

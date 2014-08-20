@@ -47,9 +47,15 @@ public class UserService implements IUserService {
 
     @Override
     public List<User> getUserList() {
+//        QUser user = QUser.user;
+//        return (List<User>)userRepository.findAll(user.firstName.contains("lemon"));
+        return userRepository.findAll();
+    }
+
+    @Override
+    public List<User> getUserListByFirstName(String firstName) {
         QUser user = QUser.user;
-        return (List<User>)userRepository.findAll(user.firstName.contains("lemon"));
-//        return userRepository.findAll();
+        return (List<User>)userRepository.findAll(user.firstName.contains(firstName));
     }
 
     @Override
