@@ -31,8 +31,6 @@ public class UserService implements IUserService {
     @Override
     public User initUser() {
         User user = new User();
-        user.setFirstName("姓中文");
-        user.setLastName("名中文");
         return user;
     }
 

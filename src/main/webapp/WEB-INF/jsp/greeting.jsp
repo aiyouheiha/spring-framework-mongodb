@@ -3,13 +3,26 @@
 
 <html>
 <head>
-    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
     <title></title>
 </head>
 <body>
 <form:form action="login">
-    Hello ${firstName}!<br>
-    <input type="submit" value="signout"/>
+    <table>
+        <tr>
+            <td colspan="2">
+                恭喜您, 用户${firstName}注册成功!
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="首页"/>
+            </td>
+            <td>
+                <input type="button" value="用户列表" onclick="javascript:location.href='user_list'">
+            </td>
+        </tr>
+    </table>
 </form:form>
 </body>
 </html>
